@@ -1,0 +1,42 @@
+html, body{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Microsoft YaHei', 'Hiragino Sans GB', serif;
+}
+
+/*Ö÷±³¾°Í¼*/
+#lb_mainBg{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url("../images/loginImage.jpg") center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    filter: blur(5px);
+    z-index: -1;
+    top: 0;
+}
+
+#lb_loginContainer{
+    margin-top: 10%;
+    margin-bottom: 0;
+}
+#lb_loginContainer #lb_loginForm,
+#lb_signUpContainer #lb_SignUpForm{
+    border: 1px solid #7a7a7a;
+    padding: 20px 20px;
+    background-color: rgba(100, 162, 165, 0.5);
+    border-radius: 10px 10px;
+    box-shadow: 3px 3px 10px;
+}
+#lb_signUpContainer #lb_SignUpForm{
+    opacity: 0;
+}
+
+.errorPsw{
+    color: red;
+    font-size: .8em;
+    height: 15px;
+}
