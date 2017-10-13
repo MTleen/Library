@@ -28,6 +28,8 @@
                 response.getWriter().write("{isPswCorrect: false}");
             }
         }
+        rs.close();
+        connector.closeConn();
     }catch (Exception e){
         e.printStackTrace();
     }

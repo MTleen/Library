@@ -34,6 +34,8 @@
 //            返回数据库错误，之后在做，我相信数据库是不可能有错的
             response.getWriter().write("服务器异常，请重试。");
         }
+        rs.close();
+        connector.closeConn();
     }catch (Exception e){
         System.out.print(e.getMessage());
         e.printStackTrace();

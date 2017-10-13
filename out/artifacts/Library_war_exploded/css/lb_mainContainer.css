@@ -78,7 +78,7 @@
 }
 
 /*ËÑË÷Ñ¡Ïî¿ò #lb_searchOpt*/
-/*#lb_mainContainer #lb_searchOpt .searchText{*/
-    /*height: 18px;*/
-    /*font-size: 10px;*/
-/*}*/
+#lb_mainContainer #lb_searchOpt #lb_sortID .caret,
+#lb_mainContainer #lb_searchOpt #lb_sortAmount .caret{
+    transition: all .3s;
+}

@@ -2,6 +2,7 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="net.sf.json.*"%>
 <%@ page import="dao.BookModel" %>
+<%@ page import="java.net.URLDecoder" %>
 <%@ page pageEncoding="UTF-8" %>
 <%--
   Created by IntelliJ IDEA.
@@ -15,21 +16,35 @@
 <jsp:useBean id="getBooks" class="dao.GetBooks" />
 <jsp:useBean id="bookModels" class="java.util.ArrayList" />
 <%
+    response.setContentType("text/html;charset=UTF-8");
+
+    String method = request.getParameter("method"),
+            sql = "",
+            bookTable = request.getParameter("bookTable");;
     int type = Integer.parseInt(request.getParameter("type"));
-    String bookTable = request.getParameter("bookTable");
-    String method = request.getParameter("method");
-    String sql = "";
-    if(method.equals( "getBooks")){
+    connector.connect();
+    Connection conn = connector.getConn();
+    ResultSet rs = null;
+    getBooks.setConn(conn);
 
+    if(method.equals("getBooks")){
+        try {
+            rs = getBooks.getBooks(bookTable, type);
+        }catch (Exception e){
+            e.printStackTrace();
+            out.print(e.getMessage());
+        }
+    }else if(method.equals("getSearch")){
+        try {
+            String text = URLDecoder.decode(URLDecoder.decode(request.getParameter("text"), "utf-8"), "utf-8");
+            sql = "select * from " + bookTable + " where (name like '%" + text + "%' or writer like '%" + text + "%') and type=" + type + " ;";
+            rs = connector.query(sql);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
-//    System.out.print(type + " " + bookTable);
-    try {
-        connector.connect();
-        Connection conn = connector.getConn();
-        ResultSet rs;
-        getBooks.setConn(conn);
 
-        rs  = getBooks.getBooks(bookTable, type);
+    try {
         while(rs.next()){
             BookModel bookModel = new BookModel();
             bookModel.setId(rs.getInt(1));
@@ -50,8 +65,12 @@
         }else{
             response.getWriter().write("false");
         }
+        rs.close();
+        connector.closeConn();
     }catch (Exception e){
         e.printStackTrace();
-        out.print(e.getMessage());
     }
+
+//    System.out.print(type + " " + bookTable);
+
 %>
