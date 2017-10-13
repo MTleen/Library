@@ -17,6 +17,11 @@
 <%
     int type = Integer.parseInt(request.getParameter("type"));
     String bookTable = request.getParameter("bookTable");
+    String method = request.getParameter("method");
+    String sql = "";
+    if(method.equals( "getBooks")){
+
+    }
 //    System.out.print(type + " " + bookTable);
     try {
         connector.connect();

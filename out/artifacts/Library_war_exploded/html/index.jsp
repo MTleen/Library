@@ -111,15 +111,44 @@
 
 <!--主页面-->
 <div id="lb_mainContainer">
-    <div id="lb_bookNav" class="row">
-        <div class="col-lg-1 col-md-1 col-lg-offset-1 col-md-offset-1 book-nav">
+    <div id="lb_bookNav" class="row" style="width: 25%" >
+        <div class="col-lg-6 col-md-6 col-lg-offset-3 col-md-offset-3 book-nav">
             <ul class="nav nav-pills nav-stacked">
+                <li><a href="#" style="font-size: 1.5em" @click="searchToggleTurn">🔍</a></li>
+                <li v-show="!searchToggle">
+                    <a style="padding: 0;">
+                        <div class="input-group">
+                            <input v-model="searchText" @keyup.enter="search" class="form-control" type="text" style="font-size: 12px; padding-left: 2px" placeholder="请输入书名/作者">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" @click="search">Go!</button>
+                            </span>
+                        </div>
+                    </a>
+                </li>
                 <li v-for="type in types"><a :href="type.href" @click="type.handler">{{type.message}}</a></li>
             </ul>
         </div>
     </div>
+
+    <div v-if="isSearch" id="lb_searchOpt">
+        <div class="row">
+            <div class="col-lg-10 col-md-10 col-lg-offset-2 col-md-offset-2 ">
+                <div class="row">
+                    <div class="col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-1">
+                        <ul class="nav nav-tabs nav-justified">
+                            <li class="disabled"><a class="disabled">{{searchText}}</a></li>
+                            <li><a>ID&nbsp;<span class="caret"></span></a></li>
+                            <li><a>剩余数量&nbsp;<span class="caret"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
     <%--***************************************我是分割线-类型1***********************************************************--%>
-    <div id="lb_bookType1" class="bookshelf">
+    <div id="lb_bookType1" class="bookshelf" >
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-2 col-md-offset-2 col-md-10">
