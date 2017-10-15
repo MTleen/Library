@@ -36,13 +36,13 @@ function getBooks(async, currentType, method, searchText, targetObj, bookTable) 
                     currentType++;
                     getBooks(async, currentType, method, searchText, targetObj, bookTable);
                 }else {
-                    if(method === "getSearch"){
+                    // if(method === "getSearch"){
                         vMain.bookTypes = targetObj;
-                    }
+                    // }
                 }
             }else {
                 //i<书的总类型数
-                if(currentType < vNav.types.length - 1){
+                if(currentType < vNav.types.length){
                     targetObj.push(false);
                     currentType++;
                     getBooks(async, currentType, method, searchText, targetObj, bookTable);
@@ -50,10 +50,10 @@ function getBooks(async, currentType, method, searchText, targetObj, bookTable) 
                     if(method === "getSearch"){
                         if(!checkSearchRes(targetObj)){
                             alert("Oops！没有查找到相应的结果！");
-                        }else {
-                            vMain.bookTypes = targetObj;
+                            return;
                         }
                     }
+                    vMain.bookTypes = targetObj;
                 }
             }
         }
@@ -115,6 +115,12 @@ var vMain = new Vue({
         searchToggleTurn: function () {
             this.searchToggle = !this.searchToggle;
         },
+
+
+
+
+
+
         //对searchResult以id为关键字进行冒泡排序
         /**
          * @param e window.event 对象
@@ -125,8 +131,10 @@ var vMain = new Vue({
             e = window.event;
             // console.log(item);
             var temp;
-            for(var i = 0; i < this.bookTypes.length - 1; i++){
+            for(var i = 0; i < this.bookTypes.length; i++){
+                // 对象长度
                 var length = this.bookTypes[i].length;
+
                 for(var j = 0; j < length - 1; j++){
                     for(var k = j + 1; k < length; k++){
                         // console.log(this.bookTypes[i][j][item]);

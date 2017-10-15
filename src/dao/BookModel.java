@@ -14,6 +14,7 @@ public class BookModel {
     private String version;
     private String author;
     private String cover;
+    private String initTime = "", deadline = "";
     File coverFile;
     public void setName(String name){
         this.name = name;
@@ -69,7 +70,19 @@ public class BookModel {
     public int getAmount(){
         return this.amount;
     }
-
+    public void setInitTime(String t){
+        this.initTime = t;
+        System.out.print(t);
+    }
+    public String getInitTime(){
+        return this.initTime;
+    }
+    public void setDeadline(String deadline){
+        this.deadline = deadline;
+    }
+    public String getDeadline(){
+        return this.deadline;
+    }
 //    public static void main(String[] args){
 //        dao.BookModel bm = new dao.BookModel();
 //        bm.setAuthor("test");

@@ -54,6 +54,7 @@
             bookModel.setAuthor(rs.getString(5));
             bookModel.setAmount(rs.getInt(6));
             bookModel.setTotal(rs.getInt(7));
+            bookModel.setCover(rs.getString(8));
             bookModels.add(bookModel);
         }
         if(bookModels.size() != 0){

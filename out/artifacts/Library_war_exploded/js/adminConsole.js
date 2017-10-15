@@ -104,6 +104,8 @@ var vConsole = new Vue({
         fileHandle: function (files) {
 
         },
+
+        // 出库
         exStore: function (e, id, name, amount, total) {
             e = window.event;
             if(confirm("正在出库《" + name + "》，请确认，出库操作将无法恢复！")){
@@ -116,6 +118,8 @@ var vConsole = new Vue({
                 }
             }
         },
+
+        //出库
         exBook: function (id, name) {
             $.ajax({
                 type: "GET",
@@ -126,7 +130,7 @@ var vConsole = new Vue({
                     books = [];
                     getBooks(true, 0, "getBooks", "", books, 'books');
                     setTimeout(function () {
-                        vMain.b
+                        vMain.bookTypes = books;
                         vConsole.bookTypes = vMain.bookTypes;
                         getAllBooks();
                     },200);

@@ -148,7 +148,7 @@
 
     </div>
     <%--***************************************我是分割线***********************************************************--%>
-    <div class="bookshelf" v-for="(type,typeIndex) in types"  :id="typeIndex">
+    <div class="bookshelf" v-for="(type,typeIndex) in types"  :id="typeIndex" v-if="bookTypes[typeIndex] !== false || bookTypes[typeIndex].length !== undefined">
         <div class="container">
             <div class="row" style="margin-bottom: 20px">
                 <div class="col-lg-10 col-lg-offset-2 col-md-offset-2 col-md-10">
@@ -163,7 +163,7 @@
                         <transition-group name="showBooks" tag="div">
                             <div class="col-lg-3 book" v-for="(book,index) in bookTypes[typeIndex]" :key="book.id">
                                 <a class="thumbnail">
-                                    <img src="../images/shuBadge.png">
+                                    <img :src="'../images/bookCovers/' + book.cover">
                                     <div class="caption">
                                         <h5>《{{book.name}}》</h5>
                                     </div>

@@ -137,7 +137,7 @@
                             </div>
                         </div>
                     </div>
-                    <%--图书图库--%>
+                    <%--图书入库--%>
                     <div class="tab-pane fade" id="lb_input">
                         <div class="row">
                             <div class="col-lg-12 col-md-12">
@@ -192,7 +192,7 @@
                                     </div>
                                     <div class="form-group">
                                         <div class="col-lg-10 col-md-10 col-lg-offset-2 col-md-offset-2">
-                                            <button class="btn btn-success btn-sm" @click="store">入库</button>
+                                            <button class="btn btn-success btn-sm" @click.prevent="store">入库</button>
                                             &nbsp;&nbsp;&nbsp;
                                             <input type="reset" value="重置" class="btn btn-sm btn-danger">
                                         </div>
