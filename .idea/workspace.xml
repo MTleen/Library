@@ -2,49 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b1b4758b-3fc4-40ae-b359-d3020b0e39aa" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/personalCenter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/jsp/booksIn.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/jsp/getLentBooks.jsp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/WEB-INF/classes/dao/ImageDemo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/WEB-INF/classes/dao/ImageUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/WEB-INF/classes/dao/StoreImage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/html/test.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/jsp/cookieTest.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/jsp/mysql.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/jsp/reDirect.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/jsp/test.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Library/dao/ImageDemo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Library/dao/ImageUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Library/dao/StoreImage.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dao/ImageDemo.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dao/ImageUtil.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/dao/StoreImage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/html/test.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/jsp/cookieTest.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/jsp/mysql.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/jsp/reDirect.jsp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/jsp/test.jsp" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/jsp/extendBooks.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/jsp/returnBooks.jsp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/doc/~$项目要求.docx" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/项目要求.docx" afterPath="$PROJECT_DIR$/doc/项目要求.docx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/WEB-INF/classes/dao/BookModel.class" afterPath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/WEB-INF/classes/dao/BookModel.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Library/dao/BookModel.class" afterPath="$PROJECT_DIR$/out/production/Library/dao/BookModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/css/personalCenter.css" afterPath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/css/personalCenter.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/html/adminConsole.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/html/adminConsole.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/html/index.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/html/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/html/personalCenter.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/html/personalCenter.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/js/adminConsole.js" afterPath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/js/adminConsole.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/js/lb_mainContainer.js" afterPath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/js/lb_mainContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/jsp/getBooks.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/jsp/getBooks.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/js/personalCenter.js" afterPath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/js/personalCenter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/jsp/getLentBooks.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Library_war_exploded/jsp/getLentBooks.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/dao/BookModel.java" afterPath="$PROJECT_DIR$/src/dao/BookModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/personalCenter.css" afterPath="$PROJECT_DIR$/web/css/personalCenter.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/html/adminConsole.jsp" afterPath="$PROJECT_DIR$/web/html/adminConsole.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/html/index.jsp" afterPath="$PROJECT_DIR$/web/html/index.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/html/personalCenter.jsp" afterPath="$PROJECT_DIR$/web/html/personalCenter.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/adminConsole.js" afterPath="$PROJECT_DIR$/web/js/adminConsole.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/lb_mainContainer.js" afterPath="$PROJECT_DIR$/web/js/lb_mainContainer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/util.js" afterPath="$PROJECT_DIR$/web/js/util.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jsp/getBooks.jsp" afterPath="$PROJECT_DIR$/web/jsp/getBooks.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/personalCenter.js" afterPath="$PROJECT_DIR$/web/js/personalCenter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jsp/borrow.jsp" afterPath="$PROJECT_DIR$/web/jsp/borrow.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jsp/getLentBooks.jsp" afterPath="$PROJECT_DIR$/web/jsp/getLentBooks.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,10 +49,15 @@
           <file leaf-file-name="personalCenter.jsp" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/web/html/personalCenter.jsp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="392">
-                  <caret line="133" column="46" lean-forward="false" selection-start-line="133" selection-start-column="46" selection-end-line="133" selection-end-column="46" />
+                <state relative-caret-position="446">
+                  <caret line="40" column="75" lean-forward="false" selection-start-line="40" selection-start-column="75" selection-end-line="40" selection-end-column="75" />
                   <folding>
                     <element signature="n#style#0;n#small#0;n#h2#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#transition-group#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#7;n#div#0;n#transition-group#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <marker date="1508089626000" expanded="false" signature="1804:1820" ph="..." />
+                    <marker date="1508089626000" expanded="false" signature="2057:2067" ph="..." />
+                    <marker date="1508089626000" expanded="false" signature="2278:2312" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -95,8 +76,8 @@
           <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/html/index.jsp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="140">
-                  <caret line="141" column="30" lean-forward="false" selection-start-line="141" selection-start-column="30" selection-end-line="141" selection-end-column="30" />
+                <state relative-caret-position="485">
+                  <caret line="195" column="131" lean-forward="false" selection-start-line="195" selection-start-column="123" selection-end-line="195" selection-end-column="131" />
                   <folding />
                 </state>
               </provider>
@@ -105,8 +86,8 @@
           <file leaf-file-name="adminConsole.jsp" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/html/adminConsole.jsp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1350">
-                  <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+                <state relative-caret-position="389">
+                  <caret line="38" column="61" lean-forward="false" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
                   <folding />
                 </state>
               </provider>
@@ -115,15 +96,26 @@
           <file leaf-file-name="BookModel.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/dao/BookModel.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="30" column="16" lean-forward="false" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+                <state relative-caret-position="664">
+                  <caret line="89" column="31" lean-forward="false" selection-start-line="89" selection-start-column="31" selection-end-line="89" selection-end-column="31" />
                   <folding>
-                    <element signature="e#672#673#0" expanded="true" />
-                    <element signature="e#706#707#0" expanded="true" />
-                    <element signature="e#1892#1893#0" expanded="true" />
-                    <element signature="e#1928#1929#0" expanded="true" />
-                    <marker date="1508061409000" expanded="true" signature="1974:2155" ph="{...}" />
+                    <element signature="e#689#690#0" expanded="true" />
+                    <element signature="e#723#724#0" expanded="true" />
+                    <element signature="e#1995#1996#0" expanded="true" />
+                    <element signature="e#2039#2040#0" expanded="true" />
+                    <element signature="e#2074#2075#0" expanded="true" />
+                    <element signature="e#2112#2113#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="getLentBooks.jsp" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/jsp/getLentBooks.jsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="499">
+                  <caret line="37" column="46" lean-forward="true" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -134,6 +126,9 @@
                 <state relative-caret-position="225">
                   <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
                   <folding>
+                    <element signature="imports" expanded="false" />
+                    <element signature="e#362#363#0" expanded="false" />
+                    <element signature="e#394#395#0" expanded="false" />
                     <marker date="1507804175000" expanded="true" signature="509:522" ph="SELECT * FRO... " />
                     <marker date="1507804175000" expanded="true" signature="509:523" ph="SELECT * FRO... missingValue" />
                     <marker date="1507804175000" expanded="true" signature="509:548" ph="SELECT * FRO... ?" />
@@ -155,12 +150,12 @@
           <file leaf-file-name="borrow.jsp" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/jsp/borrow.jsp">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="511">
-                  <caret line="40" column="52" lean-forward="false" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
+                <state relative-caret-position="436">
+                  <caret line="40" column="97" lean-forward="true" selection-start-line="40" selection-start-column="97" selection-end-line="40" selection-end-column="97" />
                   <folding>
-                    <marker date="1507959869000" expanded="true" signature="1491:1536" ph="INSERT INTO books_lent... " />
-                    <marker date="1507959869000" expanded="true" signature="1831:1860" ph="UPDATE books... " />
-                    <marker date="1507959869000" expanded="true" signature="1831:1884" ph="UPDATE books... " />
+                    <marker date="1508087960000" expanded="true" signature="1493:1547" ph="INSERT INTO books_lent... " />
+                    <marker date="1508087960000" expanded="true" signature="1842:1871" ph="UPDATE books... " />
+                    <marker date="1508087960000" expanded="true" signature="1842:1895" ph="UPDATE books... " />
                   </folding>
                 </state>
               </provider>
@@ -171,7 +166,11 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="390">
                   <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-                  <folding />
+                  <folding>
+                    <element signature="imports" expanded="false" />
+                    <element signature="e#257#258#0" expanded="false" />
+                    <element signature="e#284#285#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -180,50 +179,58 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="personalCenter.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/css/personalCenter.css">
+          <file leaf-file-name="personalCenter.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/web/js/personalCenter.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="945">
-                  <caret line="63" column="36" lean-forward="false" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
+                <state relative-caret-position="315">
+                  <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+                  <folding>
+                    <element signature="e#0#49#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="extendBooks.jsp" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/jsp/extendBooks.jsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="330">
+                  <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+                  <folding>
+                    <marker date="1508087342000" expanded="true" signature="883:984" ph="UPDATE books... " />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="returnBooks.jsp" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/jsp/returnBooks.jsp">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="16" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="exBooks.jsp" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/jsp/exBooks.jsp">
+          <file leaf-file-name="personalCenter.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/css/personalCenter.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="435">
-                  <caret line="29" column="2" lean-forward="false" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="2" />
-                  <folding>
-                    <marker date="1508048659000" expanded="true" signature="794:821" ph="DELETE FROM " />
-                    <marker date="1508048659000" expanded="true" signature="885:917" ph="DELETE FROM " />
-                  </folding>
+                <state relative-caret-position="1144">
+                  <caret line="113" column="34" lean-forward="false" selection-start-line="113" selection-start-column="34" selection-end-line="113" selection-end-column="34" />
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="personalCenter.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/js/personalCenter.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="930">
-                  <caret line="64" column="11" lean-forward="false" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
-                  <folding>
-                    <element signature="e#0#49#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="lb_mainContainer.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="lb_mainContainer.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/js/lb_mainContainer.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="623">
-                  <caret line="52" column="35" lean-forward="false" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+                <state relative-caret-position="1574">
+                  <caret line="165" column="45" lean-forward="true" selection-start-line="165" selection-start-column="45" selection-end-line="165" selection-end-column="45" />
                   <folding>
                     <element signature="e#0#49#0" expanded="false" />
                     <element signature="n#!!block;n#checkSearchRes#0" expanded="false" />
-                    <element signature="e#5786#7182#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -232,11 +239,10 @@
           <file leaf-file-name="adminConsole.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/js/adminConsole.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="108">
-                  <caret line="118" column="13" lean-forward="true" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
+                <state relative-caret-position="315">
+                  <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
                   <folding>
                     <element signature="e#0#49#0" expanded="false" />
-                    <element signature="e#1142#2944#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -322,8 +328,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/web/test.jsp" />
-        <option value="$PROJECT_DIR$/web/index.html" />
         <option value="$PROJECT_DIR$/web/cookieTest.jsp" />
         <option value="$PROJECT_DIR$/web/reDirect.jsp" />
         <option value="$PROJECT_DIR$/web/ajax.jsp" />
@@ -355,24 +359,26 @@
         <option value="$PROJECT_DIR$/web/jsp/login.jsp" />
         <option value="$PROJECT_DIR$/web/jsp/signUp.jsp" />
         <option value="$PROJECT_DIR$/web/js/adminConsole.css" />
-        <option value="$PROJECT_DIR$/web/jsp/borrow.jsp" />
         <option value="$PROJECT_DIR$/web/html/login.html" />
         <option value="$PROJECT_DIR$/web/css/adminConsole.css" />
         <option value="$PROJECT_DIR$/web/html/test.html" />
         <option value="$PROJECT_DIR$/web/css/lb_mainContainer.css" />
         <option value="$PROJECT_DIR$/web/jsp/exBooks.jsp" />
-        <option value="$PROJECT_DIR$/web/html/adminConsole.jsp" />
-        <option value="$PROJECT_DIR$/web/css/personalCenter.css" />
-        <option value="$PROJECT_DIR$/web/jsp/getLentBooks.jsp" />
-        <option value="$PROJECT_DIR$/src/dao/BookModel.java" />
-        <option value="$PROJECT_DIR$/web/html/personalCenter.jsp" />
-        <option value="$PROJECT_DIR$/web/js/personalCenter.js" />
         <option value="$PROJECT_DIR$/web/html/index.jsp" />
         <option value="$PROJECT_DIR$/web/jsp/getBooks.jsp" />
-        <option value="$PROJECT_DIR$/web/js/adminConsole.js" />
         <option value="$PROJECT_DIR$/web/jsp/booksIn.jsp" />
         <option value="$PROJECT_DIR$/web/js/util.js" />
         <option value="$PROJECT_DIR$/web/js/lb_mainContainer.js" />
+        <option value="$PROJECT_DIR$/web/jsp/returnBooks.jsp" />
+        <option value="$PROJECT_DIR$/src/dao/BookModel.java" />
+        <option value="$PROJECT_DIR$/web/jsp/getLentBooks.jsp" />
+        <option value="$PROJECT_DIR$/web/jsp/extendBooks.jsp" />
+        <option value="$PROJECT_DIR$/web/jsp/borrow.jsp" />
+        <option value="$PROJECT_DIR$/web/css/personalCenter.css" />
+        <option value="$PROJECT_DIR$/web/js/adminConsole.js" />
+        <option value="$PROJECT_DIR$/web/html/adminConsole.jsp" />
+        <option value="$PROJECT_DIR$/web/html/personalCenter.jsp" />
+        <option value="$PROJECT_DIR$/web/js/personalCenter.js" />
       </list>
     </option>
   </component>
@@ -1175,15 +1181,16 @@
       <workItem from="1507561023736" duration="72085000" />
       <workItem from="1507806280739" duration="20649000" />
       <workItem from="1508050734990" duration="17592000" />
-      <workItem from="1508071439420" duration="4802000" />
+      <workItem from="1508071439420" duration="16528000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238209000" />
+    <option name="totallyTimeSpent" value="249935000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1920" height="1007" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1204,8 +1211,8 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286026" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36393443" sideWeight="0.4978701" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286026" sideWeight="0.4978701" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24590164" sideWeight="0.4978701" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.4978701" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286026" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11767838" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1299,26 +1306,12 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/images/indexImage.jpeg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/lb_banner.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="45" column="32" lean-forward="false" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#49#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/jsp/reDirect.jsp" />
     <entry file="file://$PROJECT_DIR$/web/lib/css/reset.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="36" lean-forward="true" selection-start-line="1" selection-start-column="36" selection-end-line="1" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1488,61 +1481,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/personalCenter.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="63" column="36" lean-forward="false" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/jsp/getLentBooks.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="635">
-          <caret line="46" column="48" lean-forward="true" selection-start-line="46" selection-start-column="48" selection-end-line="46" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/personalCenter.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="64" column="11" lean-forward="false" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#49#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/dao/ImageUtil.java" />
     <entry file="file://$PROJECT_DIR$/src/dao/Connector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/dao/ImageDemo.java" />
-    <entry file="file://$PROJECT_DIR$/src/dao/BookModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="30" column="16" lean-forward="false" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
           <folding>
-            <element signature="e#672#673#0" expanded="true" />
-            <element signature="e#706#707#0" expanded="true" />
-            <element signature="e#1892#1893#0" expanded="true" />
-            <element signature="e#1928#1929#0" expanded="true" />
-            <marker date="1508061409000" expanded="true" signature="1974:2155" ph="{...}" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#257#258#0" expanded="false" />
+            <element signature="e#284#285#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/ImageDemo.java" />
     <entry file="file://$PROJECT_DIR$/src/dao/GetBooks.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#362#363#0" expanded="false" />
+            <element signature="e#394#395#0" expanded="false" />
             <marker date="1507804175000" expanded="true" signature="509:522" ph="SELECT * FRO... " />
             <marker date="1507804175000" expanded="true" signature="509:523" ph="SELECT * FRO... missingValue" />
             <marker date="1507804175000" expanded="true" signature="509:548" ph="SELECT * FRO... ?" />
@@ -1577,57 +1537,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/adminConsole.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="118" column="13" lean-forward="true" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#49#0" expanded="false" />
-            <element signature="e#1142#2944#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/html/adminConsole.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="90" column="0" lean-forward="false" selection-start-line="90" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/jsp/borrow.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="511">
-          <caret line="40" column="52" lean-forward="false" selection-start-line="40" selection-start-column="52" selection-end-line="40" selection-end-column="52" />
-          <folding>
-            <marker date="1507959869000" expanded="true" signature="1491:1536" ph="INSERT INTO books_lent... " />
-            <marker date="1507959869000" expanded="true" signature="1831:1860" ph="UPDATE books... " />
-            <marker date="1507959869000" expanded="true" signature="1831:1884" ph="UPDATE books... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/lb_mainContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="623">
-          <caret line="52" column="35" lean-forward="false" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#49#0" expanded="false" />
-            <element signature="n#!!block;n#checkSearchRes#0" expanded="false" />
-            <element signature="e#5786#7182#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/html/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="141" column="30" lean-forward="false" selection-start-line="141" selection-start-column="30" selection-end-line="141" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/util.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -1636,12 +1545,125 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/jsp/getLentBooks.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="37" column="46" lean-forward="true" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/html/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="195" column="131" lean-forward="false" selection-start-line="195" selection-start-column="123" selection-end-line="195" selection-end-column="131" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/jsp/borrow.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="40" column="97" lean-forward="true" selection-start-line="40" selection-start-column="97" selection-end-line="40" selection-end-column="97" />
+          <folding>
+            <marker date="1508087960000" expanded="true" signature="1493:1547" ph="INSERT INTO books_lent... " />
+            <marker date="1508087960000" expanded="true" signature="1842:1871" ph="UPDATE books... " />
+            <marker date="1508087960000" expanded="true" signature="1842:1895" ph="UPDATE books... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/dao/BookModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="664">
+          <caret line="89" column="31" lean-forward="false" selection-start-line="89" selection-start-column="31" selection-end-line="89" selection-end-column="31" />
+          <folding>
+            <element signature="e#689#690#0" expanded="true" />
+            <element signature="e#723#724#0" expanded="true" />
+            <element signature="e#1995#1996#0" expanded="true" />
+            <element signature="e#2039#2040#0" expanded="true" />
+            <element signature="e#2074#2075#0" expanded="true" />
+            <element signature="e#2112#2113#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/lb_mainContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1574">
+          <caret line="165" column="45" lean-forward="true" selection-start-line="165" selection-start-column="45" selection-end-line="165" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#49#0" expanded="false" />
+            <element signature="n#!!block;n#checkSearchRes#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/jsp/returnBooks.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/jsp/extendBooks.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="27" lean-forward="false" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="27" />
+          <folding>
+            <marker date="1508087342000" expanded="true" signature="883:984" ph="UPDATE books... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/adminConsole.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="29" lean-forward="false" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#49#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/html/adminConsole.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="38" column="61" lean-forward="false" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/html/personalCenter.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="133" column="46" lean-forward="false" selection-start-line="133" selection-start-column="46" selection-end-line="133" selection-end-column="46" />
+        <state relative-caret-position="446">
+          <caret line="40" column="75" lean-forward="false" selection-start-line="40" selection-start-column="75" selection-end-line="40" selection-end-column="75" />
           <folding>
             <element signature="n#style#0;n#small#0;n#h2#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#transition-group#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#7;n#div#0;n#transition-group#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1508089626000" expanded="false" signature="1804:1820" ph="..." />
+            <marker date="1508089626000" expanded="false" signature="2057:2067" ph="..." />
+            <marker date="1508089626000" expanded="false" signature="2278:2312" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/personalCenter.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1144">
+          <caret line="113" column="34" lean-forward="false" selection-start-line="113" selection-start-column="34" selection-end-line="113" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/js/personalCenter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="33" lean-forward="false" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#49#0" expanded="false" />
           </folding>
         </state>
       </provider>

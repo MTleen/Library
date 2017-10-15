@@ -38,21 +38,23 @@
                 <div class="col-lg-2 col-md-2" id="lb_nav">
                     <ul class="nav nav-pills nav-stacked">
                         <li><a href="index.jsp">主页</a></li>
+                        <li v-if="isAdmin"><a href="adminConsole.jsp">管理控制台</a></li>
                         <li class="active"><a href="#lb_manage" data-toggle="tab">图书管理</a></li>
                         <li><a href="#lb_charts" data-toggle="tab">报表统计</a></li>
-                        <li><a href="javascript:void(0);" style="font-size: 1.1em" @click="turnSearchToggle">🔍</a></li>
-                        <li style="overflow-y: hidden">
-                            <transition name="slide">
-                                <a v-if="!searchToggle" style="padding: 0">
-                                    <div class="input-group">
-                                        <input v-model="searchText" @keyup.enter="search" class="form-control" type="text" style="font-size: 12px; padding-left: 2px" placeholder="请输入书名/作者">
-                                        <span class="input-group-btn">
-                                        <button class="btn btn-default" @click="search">Go!</button>
-                                    </span>
-                                    </div>
-                                </a>
-                            </transition>
-                        </li>
+                        <li><a @click="delCookie" href="#">注销</a></li>
+                        <%--<li><a href="javascript:void(0);" style="font-size: 1.1em" @click="turnSearchToggle">🔍</a></li>--%>
+                        <%--<li style="overflow-y: hidden">--%>
+                            <%--<transition name="slide">--%>
+                                <%--<a v-if="!searchToggle" style="padding: 0">--%>
+                                    <%--<div class="input-group">--%>
+                                        <%--<input v-model="searchText" @keyup.enter="search" class="form-control" type="text" style="font-size: 12px; padding-left: 2px" placeholder="请输入书名/作者">--%>
+                                        <%--<span class="input-group-btn">--%>
+                                        <%--<button class="btn btn-default" @click="search">Go!</button>--%>
+                                    <%--</span>--%>
+                                    <%--</div>--%>
+                                <%--</a>--%>
+                            <%--</transition>--%>
+                        <%--</li>--%>
                     </ul>
                 </div>
                 <div class="col-lg-10 col-md-10 tab-content" id="lb_display">
@@ -75,57 +77,27 @@
                             <div class="col-lg-12 col-md-12 tab-content">
                                 <div id="allBooks" class="tab-pane fade in active">
                                     <div class="row">
-                                        <div class="col-lg-10 col-md-10">
-                                            <ul class="nav nav-tabs nav-justified uHead">
-                                                <li><a>ID</a></li>
-                                                <li><a>书名</a></li>
-                                                <li><a>作者/出版社</a></li>
-                                                <li><a>类型</a></li>
-                                                <li><a>借阅时间</a></li>
-                                                <li><a>最晚归还时间</a></li>
-                                            </ul>
-                                        </div>
+                                        <div class="col-lg-1 col-md-1 uHead"><a href="#" @click="sort('', 'id', 'sortId')">ID<span class="caret"></span></a></div>
+                                        <div class="col-lg-2 col-md-2 uHead">书名</div>
+                                        <div class="col-lg-2 col-md-1 uHead">作者</div>
+                                        <div class="col-lg-2 col-md-2 uHead">版本/出版社</div>
+                                        <div class="col-lg-1 col-md-2 uHead"><a href="#" @click="sort('', 'type', 'sortType')">类型<span class="caret"></span></a></div>
+                                        <div class="col-lg-1 col-md-1 uHead"><a href="#" @click="sort('', 'initTime', 'sortInit')">借阅时间<span class="caret"></span></a></div>
+                                        <div class="col-lg-2 col-md-2 uHead"><a href="#" @click="sort('', 'deadline', 'sortDeadline')">最晚归还时间<span class="caret"></span></a></div>
                                     </div>
                                     <transition-group name="sort" tag="div">
-                                        <ul class="nav nav-tabs nav-justified" v-for="(book,index) in books" :key="book.id">
-                                            <li><a>{{book.id}}</a></li>
-                                            <li><a>{{book.name}}</a></li>
-                                            <li><a>{{book.version}}</a></li>
-                                            <li><a>{{typeArr[index]}}</a></li>
-                                            <li><a>{{book.initTime}}</a></li>
-                                            <li><a>{{book.deadline}}</a></li>
-                                            <li><a><button class="btn btn-default btn-sm">续借</button></a></li>
-                                            <li><a><button class="btn btn-success btn-sm">还书</button></a></li>
-                                        </ul>
+                                        <div class="row uBody-row" v-for="(book, index) in books" :key="book.id" style="border-bottom: 1px solid #757575">
+                                            <div class="col-lg-1 col-md-1 uBody">{{book.id}}</div>
+                                            <div class="col-lg-2 col-md-2 uBody">《{{book.name}}》</div>
+                                            <div class="col-lg-2 col-md-1 uBody">{{book.author}}</div>
+                                            <div class="col-lg-2 col-md-2 uBody">{{book.version}}</div>
+                                            <div class="col-lg-1 col-md-2 uBody">{{typeArr[book.type]}}</div>
+                                            <div class="col-lg-1 col-md-1 uBody">{{book.initTime.getFullYear() + "." + (book.initTime.getMonth() + 1) + "." + (book.initTime.getDate())}}</div>
+                                            <div class="col-lg-1 col-md-1 uBody">{{book.deadline.getFullYear() + "." + (book.deadline.getMonth() + 1) + "." + (book.deadline.getDate())}}</div>
+                                            <div class="col-lg-1 col-md-1 uBody" style="padding-right: 0; text-align: right"><button class="btn btn-default btn-sm" @click="extend('' ,book.id, book.name, book.deadline, book.isExtended)">续借</button></div>
+                                            <div class="col-lg-1 col-md-1 uBody"><button class="btn btn-info btn-sm" @click="returnBook('', book.id, book.name)">还书</button></div>
+                                        </div>
                                     </transition-group>
-                                    <%--<table class="table table-hover">--%>
-                                        <%--<thead>--%>
-                                        <%--<tr>--%>
-                                            <%--<td><a href="#" @click="sort('', 'id', 'sortID', 'books')">ID<span class="caret"></span></a></td>--%>
-                                            <%--<td>书名</td>--%>
-                                            <%--<td>作者</td>--%>
-                                            <%--<td>版本/出版社</td>--%>
-                                            <%--<td>类型</td>--%>
-                                            <%--<td><a href="#" @click="sort('', 'total', 'sortTotal', 'books')">借阅时间<span class="caret"></span></a></td>--%>
-                                            <%--<td><a href="#" @click="sort('', 'amount', 'sortAmount', 'books')">最晚归还日期<span class="caret"></span></a></td>--%>
-                                        <%--</tr>--%>
-                                        <%--</thead>--%>
-                                        <%--<tbody>--%>
-                                        <%--<transition-group name="sort" tag="tbody">--%>
-                                            <%--<tr v-for="book in books[0]" :key="book.id">--%>
-                                                <%--<td>{{book.id}}</td>--%>
-                                                <%--<td>《{{book.name}}》</td>--%>
-                                                <%--<td>{{book.author}}</td>--%>
-                                                <%--<td>{{book.version}}</td>--%>
-                                                <%--<td>{{typeArr[book.type]}}</td>--%>
-                                                <%--<td>{{book.initTime}}</td>--%>
-                                                <%--<td>{{book.deadline}}</td>--%>
-                                                <%--<td><button class="btn btn-default">续借</button></td>--%>
-                                                <%--<td><button class="btn btn-danger" @click="exStore('', book.id, book.name, book.amount, book.total)">还书</button></td>--%>
-                                            <%--</tr>--%>
-                                        <%--</transition-group>--%>
-                                        <%--</tbody>--%>
-                                    <%--</table>--%>
                                 </div>
                             </div>
                         </div>
@@ -141,8 +113,6 @@
     <script src="../lib/js/vue.js"></script>
     <script src="../js/util.js"></script>
     <script src="../js/lb_navigator.js"></script>
-    <%--<script src="../js/lb_mainContainer.js"></script>--%>
-    <%--<script src="../js/adminConsole.js"></script>--%>
     <script src="../js/personalCenter.js"></script>
 
 </body>

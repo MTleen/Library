@@ -14,7 +14,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page pageEncoding="UTF-8" %>
 <%
-    System.out.print(request.getParameter("bookId"));
+//    System.out.print(request.getParameter("bookId"));
     int id = Integer.parseInt(request.getParameter("bookId")),
             userId = Integer.parseInt(request.getParameter("userId")),
             amount = Integer.parseInt(request.getParameter("amount"));
@@ -30,7 +30,7 @@
         if(rs1.next()){
             response.getWriter().write("{\"message\":\"已借阅此书，请不要重复借阅！\", \"status\": false}");
         }else {
-            PreparedStatement ps = conn.prepareStatement("INSERT INTO books_lent VALUES (?, ?, ?, ?, ?);");
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO books_lent VALUES (?, ?, ?, ?, ?, 'false');");
             ps.setInt(1, id);
             ps.setString(2, name);
             ps.setInt(3, userId);

@@ -54,18 +54,42 @@ html, body{
     box-shadow: 0 2px 10px #555555;
 }
 
-#lb_CustomerMainContainer #lb_manage .uHead a{
+#lb_CustomerMainContainer #lb_manage .uHead a,
+#lb_CustomerMainContainer #lb_manage .uHead {
     color: #ffffff;
     font-weight: 600;
+    margin-bottom: 10px;
+    /*text-align: center;*/
+}
+#lb_CustomerMainContainer #lb_manage .uHead{
+    font-size: 1.1em;
 }
 #lb_CustomerMainContainer #lb_manage .uHead a:hover{
     border-top-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;
+    text-decoration: none;
 }
+#lb_CustomerMainContainer #lb_manage .uBody{
+    color: white;
+    font-size: .9em;
+    /*text-align: center;*/
+    padding-top: 7px;
+    padding-bottom: 7px;
+    line-height: 30px;
 
-
-
+}
+#lb_CustomerMainContainer #lb_manage .uBody-row{
+    /*margin-bottom: 5px;*/
+    background-color: rgba(162, 162, 162, 0.7);
+    margin-bottom: 0;
+    margin-top: 0;
+    border-radius: 4px 4px;
+    transition: all .5s;
+}
+#lb_CustomerMainContainer #lb_manage .uBody-row:hover{
+    box-shadow: 0 0 5px;
+}
 
 
 
@@ -87,6 +111,6 @@ html, body{
     opacity: 0;
 }
 .sort-leave-active, .sort-enter-active{
-    transition: all .5s;
+    transition: all 1s ease-in-out;
     position: absolute;
 }

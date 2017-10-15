@@ -35,6 +35,7 @@
             System.out.print(rs.getString(4));
             bm.setInitTime(rs.getString(4));
             bm.setDeadline(rs.getString(5));
+            bm.setIsExtended(rs.getString(6));
             bookModels.add(bm);
         }
         if(bookModels.size() != 0){

@@ -14,7 +14,7 @@ public class BookModel {
     private String version;
     private String author;
     private String cover;
-    private String initTime = "", deadline = "";
+    private String initTime = "", deadline = "", isExtended = "";
     File coverFile;
     public void setName(String name){
         this.name = name;
@@ -83,10 +83,10 @@ public class BookModel {
     public String getDeadline(){
         return this.deadline;
     }
-//    public static void main(String[] args){
-//        dao.BookModel bm = new dao.BookModel();
-//        bm.setAuthor("test");
-//        System.out.print(bm.toString());
-//        System.out.print(bm.getJsonStr(bm));
-//    }
+    public void setIsExtended(String isExtended){
+        this.isExtended = isExtended;
+    }
+    public String getIsExtended(){
+        return this.isExtended;
+    }
 }

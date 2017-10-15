@@ -20,7 +20,8 @@ var vConsole = new Vue({
         searchToggle: true,
         searchText: "",
         isSelectedCover: false,
-        coverSrc: ""
+        coverSrc: "",
+        isAdmin: vNav.isAdmin
     },
     computed: {
         targets: function(){

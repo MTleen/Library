@@ -24,7 +24,7 @@
                     <img src="../images/shuBadge.png">
                 </div>
                 <div class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
-                    <h2><small>{{userName}}，欢迎来到图书管理控制台，在这里您可以进行管理图书管理、图书入库等工作！</small></h2>
+                    <h2><small>{{userName}}，欢迎来到<strong>图书管理控制台</strong>，在这里您可以进行管理图书管理、图书入库等工作！</small></h2>
                 </div>
             </div>
         </div>
@@ -36,6 +36,7 @@
                 <div class="col-lg-2 col-md-2" id="lb_consoleNav">
                     <ul class="nav nav-pills nav-stacked">
                         <li><a href="index.jsp">主页</a></li>
+                        <li><a href="personalCenter.jsp">个人中心</a></li>
                         <li class="active"><a href="#lb_booksManage" data-toggle="tab">图书管理</a></li>
                         <li><a href="#lb_input" data-toggle="tab">图书入库</a></li>
                         <li><a href="#lb_charts" data-toggle="tab">报表统计</a></li>
