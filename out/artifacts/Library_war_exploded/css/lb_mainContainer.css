@@ -82,3 +82,18 @@
 #lb_mainContainer #lb_searchOpt #lb_sortAmount .caret{
     transition: all .3s;
 }
+
+.showBooks-move{
+    transition: all 1s;
+}
+.showBooks-enter{
+    opacity: 0;
+    transform: translateY(20px);
+}
+.showBooks-enter-active{
+    transition: all 1s;
+}
+.showBooks-leave-active{
+    position: absolute;
+    opacity: 0;
+}

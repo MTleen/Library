@@ -111,6 +111,7 @@
 
 <!--主页面-->
 <div id="lb_mainContainer">
+    <%--书籍展示界面侧边导航栏--%>
     <div id="lb_bookNav" class="row" style="width: 25%" >
         <div class="col-lg-6 col-md-6 col-lg-offset-3 col-md-offset-3 book-nav">
             <ul class="nav nav-pills nav-stacked">
@@ -149,9 +150,9 @@
     <%--***************************************我是分割线***********************************************************--%>
     <div class="bookshelf" v-for="(type,typeIndex) in types"  :id="typeIndex">
         <div class="container">
-            <div class="row">
+            <div class="row" style="margin-bottom: 20px">
                 <div class="col-lg-10 col-lg-offset-2 col-md-offset-2 col-md-10">
-                    <h3>{{type.message}}</h3>
+                    <h2 style="color: #000000; font-weight: 600">{{type.message}}</h2>
                 </div>
             </div>
             <div class="row">
@@ -159,44 +160,46 @@
                     <%--从这里开始是书本展示--%>
                     <%--***************************************************--%>
                     <div class="row">
-                        <div class="col-lg-3 book" v-for="(book,index) in bookTypes[typeIndex]">
-                            <a class="thumbnail">
-                                <img src="../images/shuBadge.png">
-                                <div class="caption">
-                                    <h5>《{{book.name}}》</h5>
-                                </div>
-                                <div class="book-cover">
-                                    <ul class="intro">
-                                        <li data-name="book_id" class="row">
-                                            <div class="col-lg-5">ID:</div>
-                                            <div class="col-lg-7">{{book.id}}</div>
-                                        </li>
-                                        <li data-name="author" class="row">
-                                            <div class="col-lg-5">作者:</div>
-                                            <div class="col-lg-7">{{book.author}}</div>
-                                        </li>
-                                        <li data-name="edition" class="row">
-                                            <div class="col-lg-5">版本:</div>
-                                            <div class="col-lg-7">{{book.version}}</div>
-                                        </li>
+                        <transition-group name="showBooks" tag="div">
+                            <div class="col-lg-3 book" v-for="(book,index) in bookTypes[typeIndex]" :key="book.id">
+                                <a class="thumbnail">
+                                    <img src="../images/shuBadge.png">
+                                    <div class="caption">
+                                        <h5>《{{book.name}}》</h5>
+                                    </div>
+                                    <div class="book-cover">
+                                        <ul class="intro">
+                                            <li data-name="book_id" class="row">
+                                                <div class="col-lg-5">ID:</div>
+                                                <div class="col-lg-7">{{book.id}}</div>
+                                            </li>
+                                            <li data-name="author" class="row">
+                                                <div class="col-lg-5">作者:</div>
+                                                <div class="col-lg-7">{{book.author}}</div>
+                                            </li>
+                                            <li data-name="edition" class="row">
+                                                <div class="col-lg-5">版本:</div>
+                                                <div class="col-lg-7">{{book.version}}</div>
+                                            </li>
 
-                                        <li data-name="total" class="row">
-                                            <div class="col-lg-5">总馆藏数:</div>
-                                            <div class="col-lg-7">{{book.total}}</div>
-                                        </li>
-                                        <li data-name="amounts" class="row">
-                                            <div class="col-lg-5">剩余数量:</div>
-                                            <div class="col-lg-7">{{book.amount}}</div>
-                                        </li>
-                                    </ul>
-                                    <div class="row" v-if="isLanded">
-                                        <div class="col-md-6 col-lg-6 col-lg-offset-3 col-md-offset-3" style="text-align: center">
-                                            <button class="btn btn-sm btn-danger" @click="borrow('', index, book.type, book.id, book.amount, book.name)">借书</button>
+                                            <li data-name="total" class="row">
+                                                <div class="col-lg-5">总馆藏数:</div>
+                                                <div class="col-lg-7">{{book.total}}</div>
+                                            </li>
+                                            <li data-name="amounts" class="row">
+                                                <div class="col-lg-5">剩余数量:</div>
+                                                <div class="col-lg-7">{{book.amount}}</div>
+                                            </li>
+                                        </ul>
+                                        <div class="row" v-if="isLanded">
+                                            <div class="col-md-6 col-lg-6 col-lg-offset-3 col-md-offset-3" style="text-align: center">
+                                                <button class="btn btn-sm btn-danger" @click="borrow('', index, book.type, book.id, book.amount, book.name)">借书</button>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </a>
-                        </div>
+                                </a>
+                            </div>
+                        </transition-group>
                     </div>
                 </div>
             </div>
@@ -257,16 +260,16 @@
                 $(" #lb_loading ").css({visibility: "hidden"});
             });
         }, 1000);
+
+//        导航栏按钮添加事件处理函数
+        function getOffsetTop(el) {
+            return el.getBoundingClientRect().top+(window.pageYOffset||document.documentElement.scrollTop)-(document.documentElement.clientTop||0);
+        }
+        for(var i = 0; i < vNav.types.length; i++){
+            eval("var func = function (){$(document.body).animate({scrollTop: " + (getOffsetTop($('#' + i)[0]) - $(" #lb_navigator ").height()) + "});}");
+            Vue.set(vNav.types[i], 'handler', func);
+        }
     };
-
-
- function getOffsetTop(el) {
-     return el.getBoundingClientRect().top+(window.pageYOffset||document.documentElement.scrollTop)-(document.documentElement.clientTop||0);
- }
-for(var i = 0; i < vNav.types.length; i++){
-    eval("var func = function (){$(document.body).animate({scrollTop: " + (getOffsetTop($('#' + i)[0]) - $(" #lb_navigator ").height()) + "});}");
-    Vue.set(vNav.types[i], 'handler', func);
-}
 
 
 </script>

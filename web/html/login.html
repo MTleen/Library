@@ -25,7 +25,7 @@
                                 <div class="form-group">
                                     <label for="psw" class="col-lg-2 col-md-2 control-label">密码</label>
                                     <div class="col-lg-10 col-md-10">
-                                        <input required type="password" name="psw" class="form-control" id="psw" placeholder="请输入密码">
+                                        <input required type="password" name="psw" class="form-control" id="psw" placeholder="请输入密码" @keyup.enter="login">
                                         <!--密码错误提醒-->
                                         <span v-if="!isPswError" class="help-block errorPsw">密码错误，请重新输入。</span>
                                     </div>

@@ -5,70 +5,72 @@
 var currentType = 0;
 var books = [],
     searchResult = [];
-function getBooks(async, method, searchText) {
+
+/**
+ *@param async ajax是否阻塞
+ * @param currentType 当前查询的书籍类型值
+ * @param method 取值为"getSearch"或"getBooks"
+ * @param searchText 当用户搜索时的搜索值
+ * @param targetObj 数据库查询结构目标输出对象
+ * @param bookTable 数据库查询的表
+ * */
+function getBooks(async, currentType, method, searchText, targetObj, bookTable) {
     $.ajax({
         type: "GET",
-        data: {text: encodeURI(encodeURI(searchText)), type: currentType, bookTable: 'books', method: method},
+        data: {text: encodeURI(encodeURI(searchText)), type: currentType, bookTable: bookTable, method: method},
         url: "../jsp/getBooks.jsp",
         async: async,
         success: function (data) {
             console.log("正在查询的图书类别：" + currentType);
             // console.log(typeof data);
-            console.log("data: " + data.substring(0, 5) + " " + data.length + "  data !== 'false':" + (data.substring(0, 5) !== 'false') + "data !== false:" + (data  !== false) );
+            console.log("data: " + data.trim() + " " + data.length + "  data !== 'false':" + (data.substring(0, 5) !== 'false') + "data !== false:" + (data  !== false) );
             if(data.substring(0, 5) !== 'false'){
                 var bookJson = JSON.parse(data);
                 //若method值为getBooks，查询结果添加到books[]
                 //若method值为getSearch，查询结果添加到searchResult[]
-                if(method === "getBooks"){
-                    books.push(bookJson);
-                }else if(method === "getSearch"){
+                if(method === "getSearch"){
                     vMain.isSearch = true;
-                    searchResult.push(bookJson);
                 }
+                targetObj.push(bookJson);
                 if(currentType < vNav.types.length - 1){
                     currentType++;
-                    getBooks(async, method, searchText);
+                    getBooks(async, currentType, method, searchText, targetObj, bookTable);
                 }else {
                     if(method === "getSearch"){
-                        vMain.bookTypes = searchResult;
+                        vMain.bookTypes = targetObj;
                     }
-                    currentType = 0;
                 }
             }else {
                 //i<书的总类型数
                 if(currentType < vNav.types.length - 1){
-                    if(method ==="getBooks"){
-                        books.push(false);
-                    }else if(method === "getSearch"){
-                        searchResult.push(false);
-                    }
+                    targetObj.push(false);
                     currentType++;
-                    getBooks(async, method, searchText);
+                    getBooks(async, currentType, method, searchText, targetObj, bookTable);
                 }else {
                     if(method === "getSearch"){
-                        if(!checkSearchRes()){
+                        if(!checkSearchRes(targetObj)){
                             alert("Oops！没有查找到相应的结果！");
                         }else {
-                            vMain.bookTypes = searchResult;
+                            vMain.bookTypes = targetObj;
                         }
                     }
-                    currentType = 0;
                 }
             }
         }
     });
 }
-getBooks(false, "getBooks", "");
+//主页加载时获取数据库中所有的
+getBooks(false, 0, "getBooks", "", books, 'books');
 
-function checkSearchRes() {
+function checkSearchRes(obj) {
     var empty = 0;
-    for(var i = 0; i < searchResult.length; i++){
-        if(searchResult[i] === false){
+    for(var i = 0; i < obj.length; i++){
+        if(obj[i] === false){
             empty++;
         }
     }
     // console.log(empty);
-    if(empty === searchResult.length) return false;
+    if(empty === obj.length) return false;
     return true;
 }
 
@@ -98,7 +100,7 @@ var vMain = new Vue({
                 this.sortID = 1;
                 this.sortAmount = 1;
                 $(" #lb_mainContainer #lb_searchOpt .caret ").css({transform: "rotate(0deg)"});
-                getBooks(true, "getSearch", this.searchText);
+                getBooks(true, 0, "getSearch", this.searchText, searchResult, 'books');
             }else{
                 this.searchToggleTurn();
                 this.isSearch = false;
@@ -120,6 +122,7 @@ var vMain = new Vue({
          * @param toggle 排序标识位
          * */
         sort: function (e, item, toggle) {
+            e = window.event;
             // console.log(item);
             var temp;
             for(var i = 0; i < this.bookTypes.length - 1; i++){
@@ -140,11 +143,14 @@ var vMain = new Vue({
                 }
             }
             if(this[toggle] === 1){
-                $(" #lb_mainContainer #lb_searchOpt #lb_" + toggle + " .caret ").css({transform: "rotate(180deg)"});
+                // console.log(e);
+                $(e.target).find(" .caret ").css({transform: "rotate(180deg)"});
+                // $(" #lb_mainContainer #lb_searchOpt #lb_" + toggle + " .caret ").css({transform: "rotate(180deg)"});
                 this[toggle] = 0;
             }else {
-                console.log("现在是逆序排列");
-                $(" #lb_mainContainer #lb_searchOpt #lb_" + toggle + " .caret ").css({transform: "rotate(0deg)"});
+                $(e.target).find(" .caret ").css({transform: "rotate(360deg)"});
+                // console.log("现在是逆序排列");
+                // $(" #lb_mainContainer #lb_searchOpt #lb_" + toggle + " .caret ").css({transform: "rotate(0deg)"});
                 this[toggle] = 1;
             }
         },
@@ -154,14 +160,20 @@ var vMain = new Vue({
                 var date = new Date(),
                     initDate = date.getTime(),
                     deadline = new Date(initDate + 30 * 24 * 60 * 60 * 1000);
-                if(confirm("确认借阅《" + name + "》？请在" + deadline.getFullYear() + "年" + (deadline.getMonth() + 1) + "月" + deadline.getDate() + "日之前归还！")){
-                    Vue.set(this.bookTypes[type][index], 'amount', amount - 1);
+                if(confirm("确认借阅《" + name + "》？请在" + deadline.getFullYear() + "年" + (deadline.getMonth() + 1) + "月" + (deadline.getDate() + 1) + "日之前归还！")){
                     $.ajax({
                         type: "POST",
                         url: "../jsp/borrow.jsp",
-                        data: {bookId: id, amount: amount - 1, userId: userId, initDate: initDate, deadline: (initDate + 30 * 24 * 60 * 60 * 1000)},
+                        // dataType: 'json',
+                        data: {bookId: id, amount: amount - 1, userId: userId, initDate: initDate, deadline: (initDate + 30 * 24 * 60 * 60 * 1000), name: encodeURI(encodeURI(name))},
                         success: function (data) {
-                            alert(data);
+                            console.log("data: " + data + "   " + typeof data + data.trim());
+                            var json = JSON.parse(data.trim());
+                            console.log( "   " + typeof data.status);
+                            if(json.status){
+                                Vue.set(vMain.bookTypes[type][index], 'amount', amount - 1);
+                            }
+                            alert(json.message);
                         }
                     });
                 }
