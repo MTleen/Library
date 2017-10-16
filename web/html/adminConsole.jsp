@@ -77,63 +77,53 @@
                         <div class="row">
                             <div class="col-lg-12 col-md-12 tab-content">
                                 <div id="allBooks" class="tab-pane fade in active">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <td><a href="#" @click="sort('', 'id', 'sortID', 'books')">ID<span class="caret"></span></a></td>
-                                                <td>书名</td>
-                                                <td>作者</td>
-                                                <td>版本/出版社</td>
-                                                <td>类型</td>
-                                                <td><a href="#" @click="sort('', 'total', 'sortTotal', 'books')">总数<span class="caret"></span></a></td>
-                                                <td><a href="#" @click="sort('', 'amount', 'sortAmount', 'books')">剩余<span class="caret"></span></a></td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <transition-group name="sort" tag="tbody">
-                                            <tr v-for="book in books[0]" :key="book.id">
-                                                <td contenteditable="true">{{book.id}}</td>
-                                                <td contenteditable="true">《{{book.name}}》</td>
-                                                <td contenteditable="true">{{book.author}}</td>
-                                                <td contenteditable="true">{{book.version}}</td>
-                                                <td contenteditable="true">{{typeArr[book.type]}}</td>
-                                                <td contenteditable="true">{{book.total}}</td>
-                                                <td contenteditable="true">{{book.amount}}</td>
-                                                <td><button class="btn btn-default">修改</button></td>
-                                                <td><button class="btn btn-danger" @click="exStore('', book.id, book.name, book.amount, book.total)">出库</button></td>
-                                            </tr>
-                                        </transition-group>
-                                        </tbody>
-                                    </table>
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 uHead"><a href="#" @click="sort('', 'id', 'sortID', 'books')" style="color: #488ac6;">ID<span class="caret"></span></a></div>
+                                        <div class="col-lg-2 col-md-2 uHead">书名</div>
+                                        <div class="col-lg-2 col-md-1 uHead">作者</div>
+                                        <div class="col-lg-2 col-md-2 uHead">版本/出版社</div>
+                                        <div class="col-lg-1 col-md-2 uHead">类型</div>
+                                        <div class="col-lg-1 col-md-1 uHead"><a href="#" @click="sort('', 'amount', 'sortAmount', 'books')" style="color: #488ac6;">剩余<span class="caret"></span></a></div>
+                                        <div class="col-lg-1 col-md-1 uHead"><a href="#" @click="sort('', 'total', 'sortTotal', 'books')" style="color: #488ac6;">总数<span class="caret"></span></a></div>
+                                    </div>
+                                    <transition-group name="sort" tag="div">
+                                        <div class="row uBody-row" v-for="book in books[0]" :key="book.id" style="border-bottom: 1px solid #757575">
+                                            <div class="col-lg-1 col-md-1 uBody">{{book.id}}</div>
+                                            <div class="col-lg-2 col-md-2 uBody" contenteditable="true">《{{book.name}}》</div>
+                                            <div class="col-lg-2 col-md-1 uBody" contenteditable="true">{{book.author}}</div>
+                                            <div class="col-lg-2 col-md-2 uBody" contenteditable="true">{{book.version}}</div>
+                                            <div class="col-lg-1 col-md-2 uBody" style="padding-right: 0">{{typeArr[book.type]}}</div>
+                                            <div class="col-lg-1 col-md-1 uBody" contenteditable="true">{{book.amount}}</div>
+                                            <div class="col-lg-1 col-md-1 uBody" contenteditable="true">{{book.total}}</div>
+                                            <div class="col-lg-1 col-md-1 uBody"><button class="btn btn-default btn-sm">修改</button></div>
+                                            <div class="col-lg-1 col-md-1 uBody"><button class="btn btn-danger btn-sm" @click="exStore('', book.id, book.name, book.amount, book.total)">出库</button></div>
+                                        </div>
+                                    </transition-group>
                                 </div>
                                 <%--**********************************分类展示分割线*************************************--%>
                                 <div v-for="(type, index) in types" :id="index" class="tab-pane fade">
-                                    <table class="table table-hover">
-                                        <thead>
-                                            <tr>
-                                                <td><a href="#" @click="sort('', 'id', 'sortID', 'bookTypes')">ID<span class="caret"></span></a></td>
-                                                <td>书名</td>
-                                                <td>作者</td>
-                                                <td>版本/出版社</td>
-                                                <td><a href="#" @click="sort('', 'total', 'sortTotal', 'bookTypes')">总数<span class="caret"></span></a></td>
-                                                <td><a href="#" @click="sort('', 'amount', 'sortAmount', 'bookTypes')">剩余<span class="caret"></span></a></td>
-                                            </tr>
-                                        </thead>
-                                        <%--<tbody>--%>
-                                            <transition-group name="sort" tag="tbody">
-                                                <tr v-for="book in bookTypes[index]" :key="book.id">
-                                                    <td contenteditable="true">{{book.id}}</td>
-                                                    <td contenteditable="true">《{{book.name}}》</td>
-                                                    <td contenteditable="true">{{book.author}}</td>
-                                                    <td contenteditable="true">{{book.version}}</td>
-                                                    <td contenteditable="true">{{book.total}}</td>
-                                                    <td contenteditable="true">{{book.amount}}</td>
-                                                    <td><button class="btn btn-default">修改</button></td>
-                                                    <td><button class="btn btn-danger">出库</button></td>
-                                                </tr>
-                                            </transition-group>
-                                        <%--</tbody>--%>
-                                    </table>
+                                    <div class="row">
+                                        <div class="col-lg-1 col-md-1 uHead"><a href="#" @click="sort('', 'id', 'sortID', 'bookTypes')" style="color: #488ac6;">ID<span class="caret"></span></a></div>
+                                        <div class="col-lg-2 col-md-2 uHead">书名</div>
+                                        <div class="col-lg-2 col-md-1 uHead">作者</div>
+                                        <div class="col-lg-2 col-md-2 uHead">版本/出版社</div>
+                                        <div class="col-lg-1 col-md-2 uHead">类型</div>
+                                        <div class="col-lg-2 col-md-2 uHead"><a href="#" @click="sort('', 'total', 'sortTotal', 'bookTypes')" style="color: #488ac6;">剩余<span class="caret"></span></a></div>
+                                        <div class="col-lg-1 col-md-1 uHead"><a href="#" @click="sort('', 'amount', 'sortAmount', 'bookTypes')" style="color: #488ac6;">总数<span class="caret"></span></a></div>
+                                    </div>
+                                    <transition-group name="sort" tag="div">
+                                        <div class="row uBody-row" v-for="book in bookTypes[index]" :key="book.id" style="border-bottom: 1px solid #757575">
+                                            <div class="col-lg-1 col-md-1 uBody">{{book.id}}</div>
+                                            <div class="col-lg-2 col-md-2 uBody" contenteditable="true">《{{book.name}}》</div>
+                                            <div class="col-lg-2 col-md-1 uBody" contenteditable="true">{{book.author}}</div>
+                                            <div class="col-lg-2 col-md-2 uBody" contenteditable="true">{{book.version}}</div>
+                                            <div class="col-lg-1 col-md-2 uBody" style="padding-right: 0">{{typeArr[book.type]}}</div>
+                                            <div class="col-lg-1 col-md-1 uBody" contenteditable="true">{{book.amount}}</div>
+                                            <div class="col-lg-1 col-md-1 uBody" contenteditable="true">{{book.total}}</div>
+                                            <div class="col-lg-1 col-md-1 uBody" style="padding-right: 0; text-align: right"><button class="btn btn-default btn-sm">修改</button></div>
+                                            <div class="col-lg-1 col-md-1 uBody"><button class="btn btn-danger btn-sm" @click="exStore('', book.id, book.name, book.amount, book.total)">出库</button></div>
+                                        </div>
+                                    </transition-group>
                                 </div>
                             </div>
                         </div>

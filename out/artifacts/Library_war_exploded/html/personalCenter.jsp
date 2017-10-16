@@ -25,7 +25,7 @@
                     <img src="../images/shuBadge.png">
                 </div>
                 <div class="col-lg-10 col-md-10 col-lg-offset-1 col-md-offset-1">
-                    <h2><small style="color: #ffffff; font-weight: 600; text-align: center">{{userName}}，欢迎来到个人中心，在这里您可以进行续借、还书等操作！</small></h2>
+                    <h2><small style="color: #e7e7e7; font-weight: 600; text-align: center">{{userName}}，欢迎来到个人中心，在这里您可以进行续借、还书等操作！</small></h2>
                 </div>
             </div>
         </div>
@@ -42,48 +42,22 @@
                         <li class="active"><a href="#lb_manage" data-toggle="tab">图书管理</a></li>
                         <li><a href="#lb_charts" data-toggle="tab">报表统计</a></li>
                         <li><a @click="delCookie" href="#">注销</a></li>
-                        <%--<li><a href="javascript:void(0);" style="font-size: 1.1em" @click="turnSearchToggle">🔍</a></li>--%>
-                        <%--<li style="overflow-y: hidden">--%>
-                            <%--<transition name="slide">--%>
-                                <%--<a v-if="!searchToggle" style="padding: 0">--%>
-                                    <%--<div class="input-group">--%>
-                                        <%--<input v-model="searchText" @keyup.enter="search" class="form-control" type="text" style="font-size: 12px; padding-left: 2px" placeholder="请输入书名/作者">--%>
-                                        <%--<span class="input-group-btn">--%>
-                                        <%--<button class="btn btn-default" @click="search">Go!</button>--%>
-                                    <%--</span>--%>
-                                    <%--</div>--%>
-                                <%--</a>--%>
-                            <%--</transition>--%>
-                        <%--</li>--%>
                     </ul>
                 </div>
                 <div class="col-lg-10 col-md-10 tab-content" id="lb_display">
                     <%--图书管理--%>
                     <div class="tab-pane fade in active" id="lb_manage">
-                        <%--<div class="row">--%>
-                            <%--<div class="col-lg-12 col-md-12">--%>
-                                <%--<ul class="nav nav-tabs">--%>
-                                    <%--<li class="active"><a data-toggle="tab" href="#allBooks">全部书籍</a></li>--%>
-                                    <%--<li class="dropdown">--%>
-                                        <%--<a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0);">图书类别<span class="caret"></span></a>--%>
-                                        <%--<ul class="dropdown-menu">--%>
-                                            <%--<li v-for="(type, index) in types"><a data-toggle="tab" :href="targets[index]">{{type.message}}</a></li>--%>
-                                        <%--</ul>--%>
-                                    <%--</li>--%>
-                                <%--</ul>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
                         <div class="row">
                             <div class="col-lg-12 col-md-12 tab-content">
                                 <div id="allBooks" class="tab-pane fade in active">
                                     <div class="row">
-                                        <div class="col-lg-1 col-md-1 uHead"><a href="#" @click="sort('', 'id', 'sortId')">ID<span class="caret"></span></a></div>
+                                        <div class="col-lg-1 col-md-1 uHead"><a href="#" @click="sort('', 'id', 'sortId')" style="color: #488ac6;">ID<span class="caret"></span></a></div>
                                         <div class="col-lg-2 col-md-2 uHead">书名</div>
                                         <div class="col-lg-2 col-md-1 uHead">作者</div>
                                         <div class="col-lg-2 col-md-2 uHead">版本/出版社</div>
-                                        <div class="col-lg-1 col-md-2 uHead"><a href="#" @click="sort('', 'type', 'sortType')">类型<span class="caret"></span></a></div>
-                                        <div class="col-lg-1 col-md-1 uHead"><a href="#" @click="sort('', 'initTime', 'sortInit')">借阅时间<span class="caret"></span></a></div>
-                                        <div class="col-lg-2 col-md-2 uHead"><a href="#" @click="sort('', 'deadline', 'sortDeadline')">最晚归还时间<span class="caret"></span></a></div>
+                                        <div class="col-lg-1 col-md-2 uHead"><a href="#" @click="sort('', 'type', 'sortType')" style="color: #488ac6;">类型<span class="caret"></span></a></div>
+                                        <div class="col-lg-1 col-md-1 uHead"><a href="#" @click="sort('', 'initTime', 'sortInit')" style="color: #488ac6;">借阅时间<span class="caret"></span></a></div>
+                                        <div class="col-lg-2 col-md-2 uHead"><a href="#" @click="sort('', 'deadline', 'sortDeadline')" style="color: #488ac6;">最晚归还时间<span class="caret"></span></a></div>
                                     </div>
                                     <transition-group name="sort" tag="div">
                                         <div class="row uBody-row" v-for="(book, index) in books" :key="book.id" style="border-bottom: 1px solid #757575">
@@ -91,7 +65,7 @@
                                             <div class="col-lg-2 col-md-2 uBody">《{{book.name}}》</div>
                                             <div class="col-lg-2 col-md-1 uBody">{{book.author}}</div>
                                             <div class="col-lg-2 col-md-2 uBody">{{book.version}}</div>
-                                            <div class="col-lg-1 col-md-2 uBody">{{typeArr[book.type]}}</div>
+                                            <div class="col-lg-1 col-md-2 uBody" style="padding-right: 0">{{typeArr[book.type]}}</div>
                                             <div class="col-lg-1 col-md-1 uBody">{{book.initTime.getFullYear() + "." + (book.initTime.getMonth() + 1) + "." + (book.initTime.getDate())}}</div>
                                             <div class="col-lg-1 col-md-1 uBody">{{book.deadline.getFullYear() + "." + (book.deadline.getMonth() + 1) + "." + (book.deadline.getDate())}}</div>
                                             <div class="col-lg-1 col-md-1 uBody" style="padding-right: 0; text-align: right"><button class="btn btn-default btn-sm" @click="extend('' ,book.id, book.name, book.deadline, book.isExtended)">续借</button></div>

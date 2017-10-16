@@ -128,13 +128,14 @@ function getAllLentBooks() {
     $.ajax({
         type: "GET",
         url: "../jsp/getLentBooks.jsp",
-        data: {id: vBanner.userId},
+        data: {id: getCookie("userId")},
         success: function (data) {
             data = data.trim();
             console.log(data);
             if(data !== 'false'){
                 var json = JSON.parse(data);
                 books = json;
+                vCustomer.books = [];
                 for(var i in json){
                     // console.log(parseInt(json[i].initTime) + typeof json[i].initTime);
                     var initTime = new Date(parseInt(json[i].initTime));
@@ -146,6 +147,8 @@ function getAllLentBooks() {
                     // json[i].deadline = deadline.getFullYear() + "年" + (deadline.getMonth() + 1) + "月" + (deadline.getDate() + 1) + "日";
                     Vue.set(vCustomer.books, i, json[i]);
                 }
+            }else {
+                vCustomer.books = [];
             }
         }
     });
