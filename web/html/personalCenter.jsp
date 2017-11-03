@@ -40,7 +40,7 @@
                         <li><a href="index.jsp">主页</a></li>
                         <li v-if="isAdmin"><a href="adminConsole.jsp">管理控制台</a></li>
                         <li class="active"><a href="#lb_manage" data-toggle="tab">图书管理</a></li>
-                        <li><a href="#lb_charts" data-toggle="tab">报表统计</a></li>
+                        <%--<li><a href="#lb_charts" data-toggle="tab">报表统计</a></li>--%>
                         <li><a @click="delCookie" href="#">注销</a></li>
                     </ul>
                 </div>

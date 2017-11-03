@@ -39,7 +39,7 @@
                         <li><a href="personalCenter.jsp">个人中心</a></li>
                         <li class="active"><a href="#lb_booksManage" data-toggle="tab">图书管理</a></li>
                         <li><a href="#lb_input" data-toggle="tab">图书入库</a></li>
-                        <li><a href="#lb_charts" data-toggle="tab">报表统计</a></li>
+                        <%--<li><a href="#lb_charts" data-toggle="tab">报表统计</a></li>--%>
                         <li><a href="javascript:void(0);" style="font-size: 1.1em" @click="turnSearchToggle">🔍</a></li>
                         <li style="overflow-y: hidden">
                             <transition name="slide">
@@ -82,7 +82,7 @@
                                         <div class="col-lg-2 col-md-2 uHead">书名</div>
                                         <div class="col-lg-2 col-md-1 uHead">作者</div>
                                         <div class="col-lg-2 col-md-2 uHead">版本/出版社</div>
-                                        <div class="col-lg-1 col-md-2 uHead">类型</div>
+                                        <div class="col-lg-2 col-md-2 uHead">类型</div>
                                         <div class="col-lg-1 col-md-1 uHead"><a href="#" @click="sort('', 'amount', 'sortAmount', 'books')" style="color: #488ac6;">剩余<span class="caret"></span></a></div>
                                         <div class="col-lg-1 col-md-1 uHead"><a href="#" @click="sort('', 'total', 'sortTotal', 'books')" style="color: #488ac6;">总数<span class="caret"></span></a></div>
                                     </div>
@@ -92,10 +92,10 @@
                                             <div class="col-lg-2 col-md-2 uBody" contenteditable="true">《{{book.name}}》</div>
                                             <div class="col-lg-2 col-md-1 uBody" contenteditable="true">{{book.author}}</div>
                                             <div class="col-lg-2 col-md-2 uBody" contenteditable="true">{{book.version}}</div>
-                                            <div class="col-lg-1 col-md-2 uBody" style="padding-right: 0">{{typeArr[book.type]}}</div>
+                                            <div class="col-lg-2 col-md-2 uBody" style="padding-right: 0">{{typeArr[book.type]}}</div>
                                             <div class="col-lg-1 col-md-1 uBody" contenteditable="true">{{book.amount}}</div>
                                             <div class="col-lg-1 col-md-1 uBody" contenteditable="true">{{book.total}}</div>
-                                            <div class="col-lg-1 col-md-1 uBody"><button class="btn btn-default btn-sm">修改</button></div>
+                                            <%--<div class="col-lg-1 col-md-1 uBody"><button class="btn btn-default btn-sm">修改</button></div>--%>
                                             <div class="col-lg-1 col-md-1 uBody"><button class="btn btn-danger btn-sm" @click="exStore('', book.id, book.name, book.amount, book.total)">出库</button></div>
                                         </div>
                                     </transition-group>
@@ -107,7 +107,7 @@
                                         <div class="col-lg-2 col-md-2 uHead">书名</div>
                                         <div class="col-lg-2 col-md-1 uHead">作者</div>
                                         <div class="col-lg-2 col-md-2 uHead">版本/出版社</div>
-                                        <div class="col-lg-1 col-md-2 uHead">类型</div>
+                                        <div class="col-lg-2 col-md-2 uHead">类型</div>
                                         <div class="col-lg-2 col-md-2 uHead"><a href="#" @click="sort('', 'total', 'sortTotal', 'bookTypes')" style="color: #488ac6;">剩余<span class="caret"></span></a></div>
                                         <div class="col-lg-1 col-md-1 uHead"><a href="#" @click="sort('', 'amount', 'sortAmount', 'bookTypes')" style="color: #488ac6;">总数<span class="caret"></span></a></div>
                                     </div>
@@ -117,10 +117,10 @@
                                             <div class="col-lg-2 col-md-2 uBody" contenteditable="true">《{{book.name}}》</div>
                                             <div class="col-lg-2 col-md-1 uBody" contenteditable="true">{{book.author}}</div>
                                             <div class="col-lg-2 col-md-2 uBody" contenteditable="true">{{book.version}}</div>
-                                            <div class="col-lg-1 col-md-2 uBody" style="padding-right: 0">{{typeArr[book.type]}}</div>
+                                            <div class="col-lg-2 col-md-2 uBody" style="padding-right: 0">{{typeArr[book.type]}}</div>
                                             <div class="col-lg-1 col-md-1 uBody" contenteditable="true">{{book.amount}}</div>
                                             <div class="col-lg-1 col-md-1 uBody" contenteditable="true">{{book.total}}</div>
-                                            <div class="col-lg-1 col-md-1 uBody" style="padding-right: 0; text-align: right"><button class="btn btn-default btn-sm">修改</button></div>
+                                            <%--<div class="col-lg-1 col-md-1 uBody" style="padding-right: 0; text-align: right"><button class="btn btn-default btn-sm">修改</button></div>--%>
                                             <div class="col-lg-1 col-md-1 uBody"><button class="btn btn-danger btn-sm" @click="exStore('', book.id, book.name, book.amount, book.total)">出库</button></div>
                                         </div>
                                     </transition-group>
@@ -142,17 +142,17 @@
                                     <div class="form-group row">
                                         <label class="control-label col-lg-2 col-md-2" for="bookCover">书本封面图</label>
                                         <div class="col-lg-6 col-md-6 ">
-                                            <div v-if="isSelectedCover" style="width: 100px; height: 150px; border: 1px solid #cccccc; border-radius: 4px 4px;" id="cover_display">
-                                                <img :src="coverSrc" style="width: 100%; height: 100%; border-radius: 4px 4px">
+                                            <div v-if="insertBook.cover" style="width: 100px; height: 150px; border: 1px solid #cccccc; border-radius: 4px 4px;" id="cover_display">
+                                                <img :src="instantCover" style="width: 100%; height: 100%; border-radius: 4px 4px">
                                             </div>
-                                            <input type="file" class="form-control" id="bookCover" name="bookCover" accept="image/*" @change="fileHandle(this.files)">
+                                            <input type="file" class="form-control" id="bookCover" name="bookCover" accept="image/*" @change="getCoverName('')">
                                             <span class="help-block">请选择书本封面图片，建议使用比例 2:3 的图片</span>
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label class="control-label col-lg-2 col-md-2">请选择书本类型</label>
                                         <div class="col-lg-6 col-md-6 ">
-                                            <select class="form-control">
+                                            <select class="form-control" v-model="insertBook.type">
                                                 <option v-for="(type, index) in types" :value="index">{{type.message}}</option>
                                             </select>
                                         </div>
@@ -160,32 +160,39 @@
                                     <div class="form-group row">
                                         <label class="control-label col-lg-2 col-md-2" for="bookName">书名</label>
                                         <div class="col-lg-6 col-md-6 ">
-                                            <input type="text" class="col-lg-10 col-md-10 form-control" id="bookName" name="bookName" placeholder="请输入书名">
+                                            <input v-model="insertBook.name" type="text" class="col-lg-10 col-md-10 form-control" id="bookName" name="bookName" placeholder="请输入书名">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="author" class="control-label col-lg-2 col-md-2">作者</label>
+                                        <div class="col-lg-6 col-md-6 ">
+                                            <input v-model="insertBook.author" type="text" class="col-md-10 col-lg-10 form-control" id="author" name="author" placeholder="请输入作者">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="edition" class="control-label col-lg-2 col-md-2">版本/出版社</label>
                                         <div class="col-lg-6 col-md-6 ">
-                                            <input type="text" class="col-md-10 col-lg-10 form-control" id="edition" name="edition" placeholder="请输入书本的版本/出版社">
+                                            <input v-model="insertBook.edition" type="text" class="col-md-10 col-lg-10 form-control" id="edition" name="edition" placeholder="请输入书本的版本/出版社">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="amount" class="control-label col-lg-2 col-md-2">现有数量</label>
                                         <div class="col-lg-6 col-md-6 ">
-                                            <input type="number" class="col-md-10 col-lg-10 form-control" id="amount" name="amount" placeholder="请输入现有的数量">
+                                            <input v-model="insertBook.amount" type="number" class="col-md-10 col-lg-10 form-control" id="amount" name="amount" placeholder="请输入现有的数量">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="total" class="control-label col-lg-2 col-md-2">总量</label>
                                         <div class="col-lg-6 col-md-6 ">
-                                            <input type="number" class="col-md-10 col-lg-10 form-control" id="total" name="total" placeholder="请输入书本的总量">
+                                            <input v-model="insertBook.total" type="number" class="col-md-10 col-lg-10 form-control" id="total" name="total" placeholder="请输入书本的总量">
+                                            <span class="help-block" style="color: red" v-if="parseInt(insertBook.total) < parseInt(insertBook.amount)">书本总量不能小于现有馆藏量，请修改！</span>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <div class="col-lg-10 col-md-10 col-lg-offset-2 col-md-offset-2">
                                             <button class="btn btn-success btn-sm" @click.prevent="store">入库</button>
                                             &nbsp;&nbsp;&nbsp;
-                                            <input type="reset" value="重置" class="btn btn-sm btn-danger">
+                                            <input type="reset" id="reset" value="重置" class="btn btn-sm btn-danger" @click="reset">
                                         </div>
                                     </div>
                                 </form>

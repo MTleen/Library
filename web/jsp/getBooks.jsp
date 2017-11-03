@@ -3,6 +3,9 @@
 <%@ page import="net.sf.json.*"%>
 <%@ page import="dao.BookModel" %>
 <%@ page import="java.net.URLDecoder" %>
+<%@ page import="dao.Connector" %>
+<%@ page import="dao.GetBooks" %>
+<%@ page import="java.util.ArrayList" %>
 <%@ page pageEncoding="UTF-8" %>
 <%--
   Created by IntelliJ IDEA.
@@ -12,10 +15,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:useBean id="connector" class="dao.Connector"/>
-<jsp:useBean id="getBooks" class="dao.GetBooks" />
-<jsp:useBean id="bookModels" class="java.util.ArrayList" />
+<%--<jsp:useBean id="connector" class="dao.Connector"/>--%>
+<%--<jsp:useBean id="getBooks" class="dao.GetBooks" />--%>
+<%--<jsp:useBean id="bookModels" class="java.util.ArrayList" />--%>
 <%
+    Connector connector = new Connector();
+    GetBooks getBooks = new GetBooks();
+    ArrayList bookModels = new ArrayList();
     response.setContentType("text/html;charset=UTF-8");
 
     String method = request.getParameter("method"),

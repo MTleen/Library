@@ -19,11 +19,22 @@ var vConsole = new Vue({
         sortAmount: 1,
         searchToggle: true,
         searchText: "",
-        isSelectedCover: false,
-        coverSrc: "",
-        isAdmin: vNav.isAdmin
+        // isSelectedCover: false,
+        isAdmin: vNav.isAdmin,
+        insertBook: {
+            cover: "",
+            name: "",
+            type: 0,
+            edition: "",
+            amount: "",
+            total: "",
+            author: ""
+        }
     },
     computed: {
+        instantCover: function () {
+            return "../images/bookCovers/" + this.insertBook.cover;
+        },
         targets: function(){
             var arr = [];
             for(var i = 0; i < this.types.length; i++){
@@ -100,12 +111,42 @@ var vConsole = new Vue({
             }
         },
         store: function () {
+            var dataObj = {};
+            for(var item in vConsole.insertBook){
+                dataObj[item] = vConsole.insertBook[item];
+                if(vConsole.insertBook[item] === ""){
+                    alert("表格不能为有空，请填写完整！");
+                    return;
+                }
+            }
+            dataObj.author = encodeURI(encodeURI(vConsole.insertBook.author));
+            dataObj.name = encodeURI(encodeURI(vConsole.insertBook.name));
+            dataObj.edition = encodeURI(encodeURI(vConsole.insertBook.edition));
+            $.ajax({
+                type: "POST",
+                data: dataObj,
+                url: "../jsp/insertBook.jsp",
+                success: function (data) {
+                    if(true){
+                        alert("书本入库成功！");
+                        $(" #reset ").click();
+                        window.location.reload();
+                    }else {
+                        alert("数据库异常，请稍后再试！")
+                    }
+                }
+
+            });
+        },
+        getCoverName: function (e) {
+            e = window.event;
+            vConsole.insertBook.cover = $(e.target)[0].files[0].name;
+            // console.log($(e.target)[0].files[0].name)
 
         },
-        fileHandle: function (files) {
-
+        reset: function () {
+          this.insertBook.cover = "";
         },
-
         // 出库
         exStore: function (e, id, name, amount, total) {
             e = window.event;
