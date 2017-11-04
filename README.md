@@ -16,4 +16,5 @@
   将lib.zip内的jar包解压到${tomcat安装目录}/lib下
   
 -运行
-  将/out/artifacts/Library_war_exploded/Library.war复制到${tomcat}/webapps/ROOT下，启动tomcat，访问127.0.0.1/Library/html/index.jsp
+  将/out/artifacts/Library_war_exploded/Library.war解压复制到${tomcat}/webapps/ROOT下，启动tomcat，访问127.0.0.1:8080/html/index.jsp   
+  注：原则上是不可以直接更改tomcat/webapps/ROOT下的文件的，而是应该通过增加<context>来实现，具体的请自行度娘，但是为了方便暂时先直接修改ROOT的内容
