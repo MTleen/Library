@@ -129,15 +129,12 @@ var vMain = new Vue({
          * */
         sort: function (e, item, toggle) {
             e = window.event;
-            // console.log(item);
             var temp;
             for(var i = 0; i < this.bookTypes.length; i++){
                 // 对象长度
                 var length = this.bookTypes[i].length;
-
                 for(var j = 0; j < length - 1; j++){
                     for(var k = j + 1; k < length; k++){
-                        // console.log(this.bookTypes[i][j][item]);
                         if(this.bookTypes[i][j][item] > searchResult[i][k][item]){
                             //改变vue实例数据模型时一定要通过Vue.set()；否则无法触发视图的更新！！！！！！！
                             temp = this.bookTypes[i][k];
@@ -151,14 +148,10 @@ var vMain = new Vue({
                 }
             }
             if(this[toggle] === 1){
-                // console.log(e);
                 $(e.target).find(" .caret ").css({transform: "rotate(180deg)"});
-                // $(" #lb_mainContainer #lb_searchOpt #lb_" + toggle + " .caret ").css({transform: "rotate(180deg)"});
                 this[toggle] = 0;
             }else {
                 $(e.target).find(" .caret ").css({transform: "rotate(360deg)"});
-                // console.log("现在是逆序排列");
-                // $(" #lb_mainContainer #lb_searchOpt #lb_" + toggle + " .caret ").css({transform: "rotate(0deg)"});
                 this[toggle] = 1;
             }
         },
