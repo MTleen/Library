@@ -21,7 +21,7 @@ var vCustomer = new Vue({
         sortInit: 1,
         sortDeadline: 1,
         sortType: 1,
-        isAdmin: getCookie('admin')
+        isAdmin: getCookie('admin') === "true"
     },
     computed: {
         targets: function(){
